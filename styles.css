@@ -67,6 +67,13 @@ nav ul li a:hover {
     color: #c0392b;
 }
 
+.products{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .product {
     align-items: center;
     display: flex;
@@ -76,6 +83,11 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    transition: transform 2s ease;
+}
+
+.product:hover{
+    transform:  scale(1.05);
 }
 
 .product img {
