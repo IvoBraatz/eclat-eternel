@@ -1,59 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Éclat Éternel - Joias de Luxo</title>
+    <title>Éclat Éternel - Joaillerie de Luxe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Éclat Éternel</h1>
-            <nav>
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <section id="sobre" class="section">
-        <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>Descubra a beleza atemporal das nossas joias exclusivas, feitas com os melhores materiais.</p>
-        </div>
-    </section>
-    
-    <section id="produtos" class="section">
-        <div class="container">
-            <h2>Nossos Produtos</h2>
-            <div class="product">
-                <img src="joia1.jpg" alt="Joia 1">
-                <h3>Nome da Joia</h3>
-                <p>Descrição da joia e detalhes.</p>
-                <span class="price">R$999,00</span>
-                <a href="#" class="btn">Comprar</a>
+    <div class="content">
+        <header>
+            <div class="container">
+                <h1>Éclat Éternel</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <!-- Outras joias aqui -->
-        </div>
-    </section>
+        </header>
+        
+        <section id="a-propos" class="section">
+            <div class="container">
+                <h2>À Propos de Nous</h2>
+                <p>Découvrez la beauté intemporelle de nos joailleries exclusives, créées avec les meilleurs matériaux.</p>
+            </div>
+        </section>
+        
+        <section id="produits" class="section">
+            <div class="container">
+                <h2>Nos Produits</h2>
+                <div class="product">
+                    <img src="src/img/products/ring1.png" alt="Joaillerie 1">
+                    <h3>Nom de la Joaillerie</h3>
+                    <p>Description de la joaillerie et détails.</p>
+                    <span class="price">999,00 €</span>
+                    <a href="#" class="btn">Acheter</a>
+                </div>
+                <!-- Autres joailleries ici -->
+            </div>
+        </section>
+        
+        <footer id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Contactez-nous pour plus d'informations sur nos produits.</p>
+                <form action="#" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Votre Nom">
+                    <input type="email" name="email" placeholder="Votre Email">
+                    <textarea name="message" placeholder="Votre Message"></textarea>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+        </footer>
     
-    <footer id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco para mais informações sobre nossos produtos.</p>
-            <form action="#" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Seu Nome">
-                <input type="email" name="email" placeholder="Seu Email">
-                <textarea name="message" placeholder="Sua Mensagem"></textarea>
-                <button type="submit" class="btn">Enviar</button>
-            </form>
-        </div>
-    </footer>
-
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>
