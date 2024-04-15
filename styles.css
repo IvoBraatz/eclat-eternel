@@ -23,10 +23,33 @@ body {
     padding: 0 20px;
 }
 
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;   
+}
+
+.eclat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 header {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 15px 0;
+}
+
+.logo{
+    width: 10rem;
 }
 
 header h1 {
@@ -53,7 +76,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #c0392b;
+    color: #27B97A;
 }
 
 .section {
@@ -65,7 +88,7 @@ nav ul li a:hover {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 30px;
-    color: #c0392b;
+    color: #27B97A;
 }
 
 .products{
@@ -118,13 +141,13 @@ nav ul li a:hover {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #c0392b;
+    color: #27B97A;
 }
 
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #c0392b;
+    background-color: #27B97A;
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -162,13 +185,13 @@ footer {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #c0392b;
+    border-color: #27B97A;
     background-color: #fff;
     color: #000;
 }
 
 .contact-form button {
-    background-color: #c0392b;
+    background-color: #27B97A;
     color: #fff;
     border: none;
     cursor: pointer;
