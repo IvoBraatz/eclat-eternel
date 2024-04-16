@@ -3,17 +3,11 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000;
     color: #fff;
-    background-image: url('src/img/bg/diamond.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
 }
 
 .content{
-    background-color: rgba(0, 0, 0, 0.4);
+    
     
 }
 
@@ -43,7 +37,13 @@ body {
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.8);
+    background: 
+      radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%) 0 calc(120px/2),
+      radial-gradient(farthest-side at 50% 133.33%,#0000 52%,#27b97a 54% 57%,#0000 59%) calc(120px/2) 0,
+      radial-gradient(farthest-side at 133.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%),
+      radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#27b97a 54% 57%,#0000 59%),
+      #ffffff;
+    background-size: calc(120px/4.667) 120px,120px calc(120px/4.667);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 15px 0;
 }
@@ -80,15 +80,16 @@ nav ul li a:hover {
 }
 
 .section {
-    padding: 80px 0;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    text-align: center;
+    padding: 2rem 0;
 }
 
 .section h2 {
     font-size: 36px;
     font-weight: 700;
-    margin-bottom: 30px;
     color: #27B97A;
+    text-transform: uppercase;
 }
 
 .products{
@@ -103,10 +104,11 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     width: 22rem;
+    height: 32rem;
     margin-bottom: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(216, 216, 216, 0.6);
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
     transition: transform 2s ease;
 }
 
@@ -115,8 +117,10 @@ nav ul li a:hover {
 }
 
 .product img {
-    max-width: 20rem;
-    height: auto;
+    display: flex;    
+    width: 20rem;
+    object-fit: contain;
+    height: 20rem;
     margin: 1rem 0;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -147,7 +151,7 @@ nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #27B97A;
+    background-color: #252524;
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -168,36 +172,45 @@ footer {
     text-align: center;
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #000;
-    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+.content-footer{
+    display: flex;
+}
+.logo{
+    width: 10rem;
+    object-fit: contain;
+    height: 10rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    text-align: left;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #27B97A;
-    background-color: #fff;
-    color: #000;
+.subcontainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
 }
 
-.contact-form button {
-    background-color: #27B97A;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.title-itens{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: .8rem;
+}
+.item-footer{
+    text-transform: uppercase;
+    font-size: .8rem;
 }
 
-.contact-form button:hover {
-    background-color: #a93226;
+.social-link{
+    display: flex;
+    gap: .6rem;
+    text-decoration: none;
+    color:#27B97A;
+}
+
+.social-logo{
+    width: 1.2rem;
 }
