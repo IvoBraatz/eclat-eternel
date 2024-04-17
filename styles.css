@@ -7,7 +7,8 @@ body {
 }
 
 .content{
-    
+    display: flex;
+    flex-direction: column;
     
 }
 
@@ -18,10 +19,21 @@ body {
 }
 
 .header-container{
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;   
+    position: fixed;
+    width: 100%;
+    background: 
+      radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%) 0 calc(120px/2),
+      radial-gradient(farthest-side at 50% 133.33%,#0000 52%,#27b97a 54% 57%,#0000 59%) calc(120px/2) 0,
+      radial-gradient(farthest-side at 133.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%),
+      radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#27b97a 54% 57%,#0000 59%),
+      #ffffff;
+    background-size: calc(120px/4.667) 120px,120px calc(120px/4.667);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+    padding: 0;
+    z-index: 999;
 }
 
 .eclat{
@@ -34,18 +46,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+   
 }
 
-header {
-    background: 
-      radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%) 0 calc(120px/2),
-      radial-gradient(farthest-side at 50% 133.33%,#0000 52%,#27b97a 54% 57%,#0000 59%) calc(120px/2) 0,
-      radial-gradient(farthest-side at 133.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%),
-      radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#27b97a 54% 57%,#0000 59%),
-      #ffffff;
-    background-size: calc(120px/4.667) 120px,120px calc(120px/4.667);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px 0;
+.content-main{
+    margin-top: 12rem;
 }
 
 .logo{
@@ -56,6 +61,7 @@ header h1 {
     font-size: 5rem;
     font-weight: 700;
     color: #000;
+    filter: drop-shadow(0px 0px 2px #27B97A);
 }
 
 nav ul {
@@ -73,6 +79,7 @@ nav ul li a {
     color: #000;
     font-weight: 500;
     transition: color 0.3s ease;
+    filter: drop-shadow(0px 0px 2px #27B97A);
 }
 
 nav ul li a:hover {
@@ -86,6 +93,7 @@ nav ul li a:hover {
 }
 
 .section h2 {
+    margin-bottom: .4rem;
     font-size: 36px;
     font-weight: 700;
     color: #27B97A;
@@ -104,10 +112,10 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     width: 22rem;
-    height: 32rem;
+    height: 34rem;
     margin-bottom: 50px;
-    background: rgba(216, 216, 216, 0.6);
-    border-radius: 10px;
+    background: rgba(247, 247, 247, 0.6);
+    border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
     transition: transform 2s ease;
 }
@@ -213,4 +221,25 @@ footer {
 
 .social-logo{
     width: 1.2rem;
+    box-shadow: 1px solid #27B97A;
+    display: ;
+}
+
+.hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.heart-checkbox {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('src/img/logos/heart-pb.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.heart-checkbox:checked {
+    background-image: url('src/img/logos/heart-rgb.png');
 }
