@@ -22,8 +22,7 @@ body {
 .header-container{
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;   
-    position: fixed;
+    display: flex;
     width: 100%;
     background: 
       radial-gradient(farthest-side at -33.33% 50%,#0000 52%,#27b97a 54% 57%,#0000 59%) 0 calc(120px/2),
