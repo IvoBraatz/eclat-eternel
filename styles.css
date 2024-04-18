@@ -4,6 +4,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
+    width: 100%;
 }
 
 .content{
@@ -46,11 +47,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
+   width: 100%;
 }
 
 .content-main{
+    width: 100%;
     margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo{
@@ -98,6 +103,7 @@ nav ul li a:hover {
     font-weight: 700;
     color: #27B97A;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .products{
@@ -105,6 +111,7 @@ nav ul li a:hover {
     gap: 1rem;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .product {
@@ -178,11 +185,15 @@ footer {
     color: #fff;
     padding: 50px 0;
     text-align: center;
+    width: 100%;
+    
+    display: flex;
 }
 
 
 .content-footer{
     display: flex;
+    flex-wrap: wrap;
 }
 .logo{
     width: 10rem;
@@ -199,7 +210,18 @@ footer {
 .subcontainer{
     display: flex;
     flex-direction: column;
-    padding: 1rem 0;
+    padding: 0 0 1rem 0;
+    max-height: 10rem;
+}
+
+.settings{
+    text-align: center;
+    align-items: center;
+    gap: .2rem;
+}
+
+.settings .item-footer{
+    width: 5rem;
 }
 
 .title-itens{
@@ -231,15 +253,155 @@ footer {
     pointer-events: none;
 }
 
-.heart-checkbox {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-image: url('src/img/logos/heart-pb.png');
-    background-size: cover;
-    cursor: pointer;
-}
 
-.heart-checkbox:checked {
-    background-image: url('src/img/logos/heart-rgb.png');
-}
+@media screen and (max-width: 480px) {
+    header{
+        padding: 0;
+    }
+
+    header h1{
+        font-size: 3rem;
+    }
+
+    nav ul li a{
+        font-size: 1.2rem;
+    }
+
+    .logo{
+        width: 5rem;
+    }
+
+    .section h2{
+        font-size: 1.6rem;
+    }
+
+    .product{
+        width: 18rem;
+        height: 24rem;
+    }
+
+    .product img{
+        width: 12rem;
+    }
+
+    .container{
+        padding: 0;
+        width: 20rem;
+    }
+
+    .content-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .settings{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: left;
+        align-items: start;
+        text-align: left;
+        gap: .2rem;
+    }
+
+    .descriptions{
+        gap: .2rem;
+
+    }
+
+    .subcontainer{
+        display: flex;
+        flex-direction: column;
+        padding:0;
+    }
+
+    footer{
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .settings .item-footer{
+        width: 5rem;
+    }
+
+    .product p{
+        width: auto;
+    }
+  }
+
+  /* Estilos para tablets em modo retrato */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    header{
+        padding: 0;
+    }
+
+    header h1{
+        font-size: 3rem;
+    }
+
+    nav ul li a{
+        font-size: 1.2rem;
+    }
+
+    .logo{
+        width: 5rem;
+    }
+
+    .section h2{
+        font-size: 1.6rem;
+    }
+
+    .product{
+        width: 30rem;
+        height: 26rem;
+    }
+
+    .product img{
+        width: 12rem;
+    }
+
+    .container{
+        padding: 0;
+        width: 20rem;
+    }
+
+    .content-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .settings{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: left;
+        align-items: start;
+        text-align: left;
+        gap: .2rem;
+    }
+
+    .descriptions{
+        gap: .2rem;
+
+    }
+
+    .subcontainer{
+        display: flex;
+        flex-direction: column;
+        padding:0;
+    }
+
+    footer{
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .settings .item-footer{
+        width: 5rem;
+    }
+
+    .product h3,
+    .product p{
+        width: 18rem;
+        text-align: center;
+    }
+
+  }
