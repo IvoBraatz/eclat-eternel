@@ -1,0 +1,199 @@
+@import url("modal.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    padding-top: 70px;
+    color: #333;
+    background-color: #fdfdfd;
+    line-height: 1.6;
+}
+
+header.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* Botão do carrinho no header */
+header .btn-warning {
+    color: #222;
+    background-color: #ffc107; /* cor destacada para o botão */
+    border: 2px solid #ffd700; /* borda dourada para destaque */
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header .btn-warning:hover {
+    background-color: #ffd700; /* cor de hover mais clara */
+    color: #333;
+}
+
+.logo {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.navbar .btn {
+    font-weight: 500;
+}
+
+.swiper {
+    height: 80vh;
+    width: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Responsividade para carousel */
+@media (max-width: 768px) {
+    .carousel-caption {
+        bottom: 10%;
+        left: 5%;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    .swiper-slide img {
+        height: 60vh;
+    }
+}
+
+.btn-warning {
+    color: #222;
+}
+
+.card {
+    border: none;
+}
+
+.card img {
+    transition: transform 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Seção Sobre */
+.about p.lead {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.about .btn-warning {
+    font-weight: 500;
+    font-size: 1em;
+    padding: 12px 24px;
+}
+
+/* Depoimentos */
+.testimonials {
+    background-color: #333;
+    background-image: url('assets/images/fundo-depoimentos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    padding: 60px 0;
+}
+
+.testimonial {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1em;
+}
+
+.testimonial h5 {
+    color: #ffd700;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Responsividade para cartões */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+    .card img {
+        height: auto;
+    }
+}
+
+/* Carrinho */
+.table-responsive {
+    margin-top: 30px;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.btn-warning {
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-danger {
+    color: #fff;
+}
+
+#product-details {
+    margin-top: 20px;
+}
+
+#product-details h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#product-details p.lead {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#product-details img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsividade para produtos */
+@media (max-width: 768px) {
+    #product-details h2 {
+        font-size: 1.5rem;
+    }
+    #product-details p.lead {
+        font-size: 1.2rem;
+    }
+}

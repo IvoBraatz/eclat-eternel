@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éclat Éternel - Joalheria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/assets/logos/ECLAT-LOGO.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">Éclat Éternel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#collections">Coleções</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative btn btn-warning text-dark" href="/cart">
+                            Carrinho
+                            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Banner com Carrossel -->
+    <section id="home" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="assets/images/destaque1.webp" alt="Joia Destaque">
+                <div class="carousel-caption">
+                    <h2>Elegância Atemporal</h2>
+                    <p>Joias de luxo para momentos únicos</p>
+                    <a href="#shop" class="btn btn-warning btn-lg">Descubra Coleções</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/destaque2.webp" alt="Joia Destaque">
+                <div class="carousel-caption">
+                    <h2>Exclusividade Refinada</h2>
+                    <p>Peças selecionadas com o mais alto padrão</p>
+                    <a href="#shop" class="btn btn-warning btn-lg">Explore Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Coleções em Destaque -->
+    <section id="collections" class="collections py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Coleções Exclusivas</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/images/aneis.webp" class="card-img-top" alt="Coleção de Anéis">
+                        <div class="card-body">
+                            <h3 class="card-title">Anéis</h3>
+                            <a href="collections/aneis.html" class="btn btn-outline-warning">Ver Coleção</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/images/colares.webp" class="card-img-top" alt="Coleção de Colares">
+                        <div class="card-body">
+                            <h3 class="card-title">Colares</h3>
+                            <a href="collections/colares.html" class="btn btn-outline-warning">Ver Coleção</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/images/pulseiras.webp" class="card-img-top" alt="Coleção de Pulseiras">
+                        <div class="card-body">
+                            <h3 class="card-title">Pulseiras</h3>
+                            <a href="collections/pulseiras.html" class="btn btn-outline-warning">Ver Coleção</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/images/brincos.webp" class="card-img-top" alt="Coleção de Brincos">
+                        <div class="card-body">
+                            <h3 class="card-title">Brincos</h3>
+                            <a href="collections/brincos.html" class="btn btn-outline-warning">Ver Coleção</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lançamentos e Tendências -->
+    <section class="trending py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Lançamentos e Tendências</h2>
+            <div id="product-list" class="row text-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/produto1.webp" class="card-img-top" alt="Produto 1">
+                        <div class="card-body">
+                            <h3 class="card-title">Anel de Ouro</h3>
+                            <p class="card-text">R$ 1.200,00</p>
+                            <button class="btn btn-warning">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/produto2.webp" class="card-img-top" alt="Produto 2">
+                        <div class="card-body">
+                            <h3 class="card-title">Colar de Prata</h3>
+                            <p class="card-text">R$ 800,00</p>
+                            <button class="btn btn-warning">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/produto3.webp" class="card-img-top" alt="Produto 3">
+                        <div class="card-body">
+                            <h3 class="card-title">Pulseira de Platina</h3>
+                            <p class="card-text">R$ 1.500,00</p>
+                            <button class="btn btn-warning">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Sobre a Marca -->
+       <section id="about" class="about py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Sobre a Éclat Éternel</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <img src="assets/images/sobre.webp" class="img-fluid rounded shadow" alt="Imagem sobre a joalheria">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">
+                        Na Éclat Éternel, criamos joias que capturam a essência de momentos eternos. Cada peça é desenhada e produzida por artesãos dedicados a transmitir beleza, sofisticação e exclusividade. Nossa missão vai além de oferecer joias – buscamos criar relíquias que se tornem parte de sua história, passando de geração em geração.
+                    </p>
+                    <p class="mb-4">
+                        Com um compromisso inabalável com a excelência, cada detalhe é cuidadosamente trabalhado para refletir o estilo e a elegância de nossos clientes. Ao escolher Éclat Éternel, você está optando por qualidade, autenticidade e um serviço que prioriza sua satisfação e exclusividade.
+                    </p>
+                    <a href="#collections" class="btn btn-warning btn-lg">Explorar Nossas Coleções</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos de Clientes -->
+    <section id="testimonials" class="testimonials py-5 text-light">
+        <div class="container text-center">
+            <h2 class="mb-5">Depoimentos dos Clientes</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial bg-dark p-4 rounded shadow">
+                        <p class="fst-italic">"Adquiri meu primeiro anel da Éclat Éternel como um presente para minha esposa. A experiência foi encantadora, do atendimento até a embalagem detalhada. O anel é impecável, e ela ficou emocionada. Certamente voltarei!"</p>
+                        <h5 class="fw-bold mt-3">- Carlos Ribeiro</h5>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial bg-dark p-4 rounded shadow">
+                        <p class="fst-italic">"A qualidade é incomparável. Comprei um colar para um evento especial, e foi o centro das atenções. Recomendo para quem busca exclusividade e sofisticação. Um luxo!"</p>
+                        <h5 class="fw-bold mt-3">- Marina Costa</h5>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial bg-dark p-4 rounded shadow">
+                        <p class="fst-italic">"As joias da Éclat Éternel superaram minhas expectativas! Atendimento personalizado e um produto que realmente se destaca. Me sinto especial sempre que uso!"</p>
+                        <h5 class="fw-bold mt-3">- Julia Mendes</h5>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial bg-dark p-4 rounded shadow">
+                        <p class="fst-italic">"Escolhi a Éclat Éternel para minha coleção pessoal e nunca me arrependi. Cada peça é única e reflete o cuidado que a marca tem com seus clientes. Altamente recomendada."</p>
+                        <h5 class="fw-bold mt-3">- Renato Oliveira</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Boletim Informativo -->
+    <section id="contact" class="newsletter py-5 bg-dark text-light">
+        <div class="container text-center">
+            <h2 class="mb-3">Seja o primeiro a saber</h2>
+            <p class="mb-4">Assine para receber ofertas e novidades exclusivas!</p>
+            <form id="newsletter-form" class="row g-3 justify-content-center">
+                <div class="col-auto">
+                    <input type="email" class="form-control" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-warning">Inscrever-se</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 Éclat Éternel. Todos os direitos reservados.</p>
+            <div class="social-links mt-3">
+                <a href="#" class="text-warning me-3">Facebook</a>
+                <a href="#" class="text-warning me-3">Instagram</a>
+                <a href="#" class="text-warning">Twitter</a>
+            </div>
+        </div>
+    </footer>
+   <!-- Modal de Alerta Personalizado -->
+<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Mensagem</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="alertModalBody">
+                <!-- Mensagem do modal será inserida aqui -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Swiper & Bootstrap JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Função para atualizar o número de itens no carrinho
+        function updateCartCount() {
+            fetch('/api/cart')
+                .then(response => response.json())
+                .then(cartItems => {
+                    const cartCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+                    document.getElementById('cart-count').textContent = cartCount;
+                })
+                .catch(error => console.error('Erro ao atualizar contagem do carrinho:', error));
+        }
+    
+        // Chamar a função ao carregar a página
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+    
+</body>
+</html>
