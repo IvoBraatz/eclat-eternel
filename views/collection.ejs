@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção <%= collectionName %> - Éclat Éternel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand logo" href="/">Éclat Éternel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#collections">Coleções</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative btn btn-warning text-dark" href="/cart">
+                            Carrinho
+                            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="collection-banner text-center py-5 mb-5">
+        <h1 class="display-4 fw-bold text-light"><%= collectionName %></h1>
+    </section>
+    <section class="container py-5">
+        <div class="row">
+            <% if (products.length > 0) { %>
+                <% products.forEach(product => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm border-0">
+                            <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>" style="border-radius: 10px;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold"><%= product.name %></h5>
+                                <p class="card-text text-muted">R$ <%= product.price.toFixed(2) %></p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="/product/<%= product.id %>" class="btn btn-outline-primary me-2">Ver Detalhes</a>
+                                    <button onclick="addToCart(<%= product.id %>)" class="btn btn-warning">Adicionar ao Carrinho</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p class="text-center">Nenhum produto encontrado nesta coleção.</p>
+            <% } %>
+        </div>
+    </section>
+
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Mensagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="alertModalBody">
+                    <!-- Mensagem do modal será inserida aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 bg-dark text-light text-center">
+        <p>&copy; 2023 Éclat Éternel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -41,6 +41,7 @@
             <table class="table table-bordered table-hover">
                 <thead class="table-dark">
                     <tr>
+                        <th>Imagem</th>
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Preço Unitário</th>
@@ -53,7 +54,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3" class="text-end fw-bold">Total</td>
+                        <td colspan="4" class="text-end fw-bold">Total</td>
                         <td id="cart-total">R$ 0,00</td>
                         <td></td>
                     </tr>
@@ -61,10 +62,11 @@
             </table>
         </div>
         <div class="text-end">
-            <button class="btn btn-warning btn-lg mt-3">Finalizar Compra</button>
+            <button class="btn btn-warning btn-lg mt-3" onclick="finalizarCompra()">Finalizar Compra</button>
         </div>
+        
     </section>
-    
+
     <!-- Modal de Alerta Personalizado -->
     <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -83,8 +85,17 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS and Custom Scripts -->
+    <footer class="py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 Éclat Éternel. Todos os direitos reservados.</p>
+            <div class="social-links mt-3">
+                <a href="#" class="text-warning me-3">Facebook</a>
+                <a href="#" class="text-warning me-3">Instagram</a>
+                <a href="#" class="text-warning">Twitter</a>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/cart.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

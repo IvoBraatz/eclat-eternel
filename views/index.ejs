@@ -69,7 +69,8 @@
                         <img src="assets/images/aneis.webp" class="card-img-top" alt="Coleção de Anéis">
                         <div class="card-body">
                             <h3 class="card-title">Anéis</h3>
-                            <a href="collections/aneis.html" class="btn btn-outline-warning">Ver Coleção</a>
+                            <a href="/collections/aneis" class="btn btn-outline-warning">Ver Coleção</a>
+
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                         <img src="assets/images/colares.webp" class="card-img-top" alt="Coleção de Colares">
                         <div class="card-body">
                             <h3 class="card-title">Colares</h3>
-                            <a href="collections/colares.html" class="btn btn-outline-warning">Ver Coleção</a>
+                            <a href="collections/colares" class="btn btn-outline-warning">Ver Coleção</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                         <img src="assets/images/pulseiras.webp" class="card-img-top" alt="Coleção de Pulseiras">
                         <div class="card-body">
                             <h3 class="card-title">Pulseiras</h3>
-                            <a href="collections/pulseiras.html" class="btn btn-outline-warning">Ver Coleção</a>
+                            <a href="collections/pulseiras" class="btn btn-outline-warning">Ver Coleção</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +97,7 @@
                         <img src="assets/images/brincos.webp" class="card-img-top" alt="Coleção de Brincos">
                         <div class="card-body">
                             <h3 class="card-title">Brincos</h3>
-                            <a href="collections/brincos.html" class="btn btn-outline-warning">Ver Coleção</a>
+                            <a href="collections/brincos" class="btn btn-outline-warning">Ver Coleção</a>
                         </div>
                     </div>
                 </div>
@@ -109,36 +110,19 @@
         <div class="container">
             <h2 class="text-center mb-5">Lançamentos e Tendências</h2>
             <div id="product-list" class="row text-center">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/images/produto1.webp" class="card-img-top" alt="Produto 1">
-                        <div class="card-body">
-                            <h3 class="card-title">Anel de Ouro</h3>
-                            <p class="card-text">R$ 1.200,00</p>
-                            <button class="btn btn-warning">Adicionar ao Carrinho</button>
+                <% featuredProducts.forEach(product => { %>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+                            <div class="card-body">
+                                <h3 class="card-title"><%= product.name %></h3>
+                                <p class="card-text">R$ <%= parseFloat(product.price).toFixed(2) %></p>
+                                <button onclick="addToCart(<%= product.id %>)" class="btn btn-warning mb-2">Adicionar ao Carrinho</button>
+                                <a href="/product/<%= product.id %>" class="btn btn-outline-primary">Ver Detalhes</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/images/produto2.webp" class="card-img-top" alt="Produto 2">
-                        <div class="card-body">
-                            <h3 class="card-title">Colar de Prata</h3>
-                            <p class="card-text">R$ 800,00</p>
-                            <button class="btn btn-warning">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/images/produto3.webp" class="card-img-top" alt="Produto 3">
-                        <div class="card-body">
-                            <h3 class="card-title">Pulseira de Platina</h3>
-                            <p class="card-text">R$ 1.500,00</p>
-                            <button class="btn btn-warning">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
+                <% }) %>
             </div>
         </div>
     </section>
