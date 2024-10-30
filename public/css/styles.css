@@ -8,13 +8,18 @@
 }
 
 body {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding-top: 70px;
     color: #333;
     background-color: #fdfdfd;
     line-height: 1.6;
 }
 
+main {
+    flex: 1; /* Faz o conteúdo principal expandir para ocupar o espaço */
+}
 header.navbar {
     position: fixed;
     top: 0;

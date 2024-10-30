@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/assets/logos/ECLAT-LOGO.png" type="image/x-icon">
 </head>
-<body>
-
+<body class="d-flex flex-column min-vh-100">
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand logo" href="/">Éclat Éternel</a>
@@ -34,38 +33,50 @@
         </div>
     </header>
 
-    <!-- Carrinho de Compras -->
-    <section class="container py-5">
-        <h2 class="text-center mb-5">Carrinho de Compras</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Imagem</th>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço Unitário</th>
-                        <th>Subtotal</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="cart-items">
-                    <!-- Itens do carrinho serão carregados dinamicamente -->
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4" class="text-end fw-bold">Total</td>
-                        <td id="cart-total">R$ 0,00</td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
+    <main class="flex-grow-1">
+        <!-- Carrinho de Compras -->
+        <section class="container py-5">
+            <h2 class="text-center mb-5">Carrinho de Compras</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Imagem</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                            <th>Subtotal</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Itens do carrinho serão carregados dinamicamente -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-end fw-bold">Total</td>
+                            <td id="cart-total">R$ 0,00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="text-end">
+                <button class="btn btn-warning btn-lg mt-3" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 bg-dark text-light mt-auto">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 Éclat Éternel. Todos os direitos reservados.</p>
+            <div class="social-links mt-3">
+                <a href="#" class="text-warning me-3">Facebook</a>
+                <a href="#" class="text-warning me-3">Instagram</a>
+                <a href="#" class="text-warning">Twitter</a>
+            </div>
         </div>
-        <div class="text-end">
-            <button class="btn btn-warning btn-lg mt-3" onclick="finalizarCompra()">Finalizar Compra</button>
-        </div>
-        
-    </section>
+    </footer>
 
     <!-- Modal de Alerta Personalizado -->
     <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
@@ -85,16 +96,6 @@
         </div>
     </div>
 
-    <footer class="py-4 bg-dark text-light">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2023 Éclat Éternel. Todos os direitos reservados.</p>
-            <div class="social-links mt-3">
-                <a href="#" class="text-warning me-3">Facebook</a>
-                <a href="#" class="text-warning me-3">Instagram</a>
-                <a href="#" class="text-warning">Twitter</a>
-            </div>
-        </div>
-    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="/js/script.js"></script>
 </body>

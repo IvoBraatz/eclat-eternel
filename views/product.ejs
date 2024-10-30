@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/assets/logos/ECLAT-LOGO.png" type="image/x-icon">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand logo" href="/">Éclat Éternel</a>
@@ -33,25 +35,28 @@
         </div>
     </header>
 
-    <!-- Detalhes do Produto -->
-    <section class="container py-5">
-        <div class="row align-items-center" id="product-details">
-            <div class="col-md-6">
-                <img src="<%= product.image %>" alt="<%= product.name %>" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-                <h2><%= product.name %></h2>
-                <p class="lead">R$ <%= typeof product.price === 'number' ? product.price.toFixed(2) : parseFloat(product.price).toFixed(2) %></p>
-                <p><%= product.description %></p>
-                <div class="d-flex">
-                    <input type="number" id="quantity" class="form-control w-25 me-2" value="1" min="1">
-                    <button onclick="addToCart(<%= product.id %>)" class="btn btn-warning">Adicionar ao Carrinho</button>
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow-1">
+        <section class="container py-5">
+            <div class="row align-items-center" id="product-details">
+                <div class="col-md-6">
+                    <img src="<%= product.image %>" alt="<%= product.name %>" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2><%= product.name %></h2>
+                    <p class="lead">R$ <%= typeof product.price === 'number' ? product.price.toFixed(2) : parseFloat(product.price).toFixed(2) %></p>
+                    <p><%= product.description %></p>
+                    <div class="d-flex">
+                        <input type="number" id="quantity" class="form-control w-25 me-2" value="1" min="1">
+                        <button onclick="addToCart(<%= product.id %>)" class="btn btn-warning">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="py-4 bg-dark text-light">
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-light mt-auto">
         <div class="container text-center">
             <p class="mb-0">&copy; 2023 Éclat Éternel. Todos os direitos reservados.</p>
             <div class="social-links mt-3">
