@@ -13,17 +13,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// Configuração do MySQL
-const db = mysql.createConnection({
+// Configuração do MySQL usando pool de conexões
+const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-db.connect(err => {
-    if (err) throw err;
+pool.getConnection((err) => {
+    if (err) {
+        console.error('Erro ao conectar ao MySQL:', err);
+        return;
+    }
     console.log('Conectado ao MySQL com sucesso!');
 });
 
@@ -49,11 +55,10 @@ app.post('/api/products', upload.single('image'), (req, res) => {
         return res.status(400).json({ message: 'Todos os campos são obrigatórios!' });
     }
 
-    // Converte 'featured' para 1 (verdadeiro) ou 0 (falso)
     const isFeatured = featured === 'on' ? 1 : 0;
 
     const sql = 'INSERT INTO products (name, price, description, collection, image, featured) VALUES (?, ?, ?, ?, ?, ?)';
-    db.query(sql, [name, parseFloat(price), description, collection, image, isFeatured], (err, result) => {
+    pool.query(sql, [name, parseFloat(price), description, collection, image, isFeatured], (err, result) => {
         if (err) {
             console.error('Erro ao adicionar produto:', err);
             res.status(500).json({ message: 'Erro ao adicionar produto.' });
@@ -63,18 +68,17 @@ app.post('/api/products', upload.single('image'), (req, res) => {
     });
 });
 
-
 // Rota para buscar apenas produtos destacados (featured = 1)
 app.get('/api/products', (req, res) => {
     const sql = 'SELECT * FROM products WHERE featured = 1';
-    db.query(sql, (err, results) => {
+    pool.query(sql, (err, results) => {
         if (err) {
             console.error('Erro ao buscar produtos:', err);
             res.status(500).json({ message: 'Erro ao buscar produtos.' });
         } else {
             const formattedResults = results.map(product => ({
                 ...product,
-                price: parseFloat(product.price),  // Certifique-se de que `price` seja um número
+                price: parseFloat(product.price),
             }));
             res.json(formattedResults);
         }
@@ -86,7 +90,7 @@ app.get('/collections/:collectionName', (req, res) => {
     const collectionName = req.params.collectionName;
     const sql = 'SELECT * FROM products WHERE collection = ?';
 
-    db.query(sql, [collectionName], (err, products) => {
+    pool.query(sql, [collectionName], (err, products) => {
         if (err) {
             console.error('Erro ao buscar produtos da coleção:', err);
             return res.status(500).json({ message: 'Erro ao buscar produtos da coleção.' });
@@ -94,7 +98,7 @@ app.get('/collections/:collectionName', (req, res) => {
 
         const formattedProducts = products.map(product => ({
             ...product,
-            price: parseFloat(product.price)  // Certifique-se de que o preço é um número
+            price: parseFloat(product.price)
         }));
 
         res.render('collection', { collectionName, products: formattedProducts });
@@ -106,7 +110,7 @@ app.get('/api/collections/:collectionName', (req, res) => {
     const collectionName = req.params.collectionName;
     const sql = 'SELECT * FROM products WHERE collection = ?';
 
-    db.query(sql, [collectionName], (err, results) => {
+    pool.query(sql, [collectionName], (err, results) => {
         if (err) {
             console.error('Erro ao buscar produtos da coleção via API:', err);
             return res.status(500).json({ message: 'Erro ao buscar produtos da coleção.' });
@@ -115,7 +119,6 @@ app.get('/api/collections/:collectionName', (req, res) => {
         res.json(results);
     });
 });
-
 
 // Rota para obter itens do carrinho
 app.get('/api/cart', (req, res) => {
@@ -131,7 +134,7 @@ app.post('/api/cart', (req, res) => {
         cart[productIndex].quantity += quantity;
     } else {
         const sql = 'SELECT * FROM products WHERE id = ?';
-        db.query(sql, [id], (err, results) => {
+        pool.query(sql, [id], (err, results) => {
             if (err || results.length === 0) {
                 console.error('Produto não encontrado:', err);
                 res.status(404).json({ message: 'Produto não encontrado' });
@@ -152,13 +155,13 @@ app.delete('/api/cart/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    const sql = 'SELECT * FROM products WHERE featured = 1'; // Apenas produtos com featured = 1
-    db.query(sql, (err, products) => {
+    const sql = 'SELECT * FROM products WHERE featured = 1';
+    pool.query(sql, (err, products) => {
         if (err) throw err;
 
         const featuredProducts = products.map(product => ({
             ...product,
-            price: parseFloat(product.price)  // Converte o preço para número
+            price: parseFloat(product.price)
         }));
 
         res.render('index', { featuredProducts });
@@ -168,7 +171,7 @@ app.get('/', (req, res) => {
 app.get('/product/:id', (req, res) => {
     const productId = parseInt(req.params.id);
     const sql = 'SELECT * FROM products WHERE id = ?';
-    db.query(sql, [productId], (err, results) => {
+    pool.query(sql, [productId], (err, results) => {
         if (err || results.length === 0) {
             res.status(404).send('Produto não encontrado');
         } else {
@@ -178,8 +181,6 @@ app.get('/product/:id', (req, res) => {
 });
 
 app.get('/cart', (req, res) => res.render('cart'));
-
-// Rota para página de adicionar produto
 app.get('/add_product', (req, res) => res.render('add_product'));
 
 // Iniciar servidor
